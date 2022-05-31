@@ -1,9 +1,12 @@
 import React, { useRef, useState } from 'react';
+import useStore from '../stores/MusicDataStore';
 
 export default function BPMFinder() {
     const [clockRunning, setClockRunning] = useState(false);
     const [clicksLeft, setClicksLeft] = useState(0);
     const [bpmDisplay, setBpmDisplay] = useState(0);
+
+    const setBpm = useStore(state => state.setTempo);
 
     const clicks = 8;
 
@@ -37,6 +40,7 @@ export default function BPMFinder() {
 
         reset();
         setBpmDisplay(bpm);
+        setBpm(bpm);
     }
 
     const reset = () => {

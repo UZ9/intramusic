@@ -1,7 +1,10 @@
 import './App.css';
 import Draggable from 'react-draggable';
 import { ReactPlayerWrapper } from './components/ReactPlayerWrapper';
-import BPMFinder from './BPMFinder';
+import BPMFinder from './components/BPMFinder';
+import MIDIExporter from './components/MIDIExporter';
+import RhythmMaker from './components/RhythmMaker';
+
 
 function Navbar() {
   return (
@@ -24,6 +27,8 @@ function Navbar() {
                   </div>
                 </div>
                 <div className="col-md-10 d-flex flex-row-reverse my-auto ">
+                  <MIDIExporter />
+
                 </div>
               </div>
             </div>
@@ -41,6 +46,8 @@ function App() {
   return (
     <>
       <Navbar />
+
+
 
       <div className='container-fluid'>
         <div className='col-xl-2 ml-auto'>
@@ -61,6 +68,18 @@ function App() {
               <ReactPlayerWrapper />
             </div>
           </Draggable>
+        </div>
+      </div>
+
+      <div className='container-fluid'>
+        <div className='col-xl-3 ml-auto'>
+          <div className='row ms-md-1 mr-md-1 pt-3'>
+            <Draggable grid={[40, 40]}>
+              <div className='p-3 card card-common'>
+                <RhythmMaker />
+              </div>
+            </Draggable>
+          </div>
         </div>
       </div>
     </>
