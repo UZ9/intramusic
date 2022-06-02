@@ -4,7 +4,6 @@ import useStore from '../stores/MusicDataStore';
 export default function RhythmMaker() {
     const [clockRunning, setClockRunning] = useState(false);
     const [clicksLeft, setClicksLeft] = useState(0);
-    const [bpmDisplay, setBpmDisplay] = useState(0);
 
     const setNoteDurations = useStore(state => state.setNoteDurations);
     const tempo = useStore(state => state.tempo);

@@ -4,6 +4,7 @@ import { ReactPlayerWrapper } from './components/ReactPlayerWrapper';
 import BPMFinder from './components/BPMFinder';
 import MIDIExporter from './components/MIDIExporter';
 import RhythmMaker from './components/RhythmMaker';
+import PianoRollModule from './components/PianoRollModule';
 
 
 function Navbar() {
@@ -42,6 +43,7 @@ function Navbar() {
 }
 
 function App() {
+
 
   return (
     <>
@@ -82,6 +84,21 @@ function App() {
           </div>
         </div>
       </div>
+
+
+
+      <div className='d-inline-flex container-fluid'>
+          <div className='row ms-md-1 mr-md-1 pt-3'>
+            {/* <Draggable grid={[40, 40]}> */}
+            <div className='p-3 card card-common'>
+              <PianoRollModule />
+
+            </div>
+            {/* </Draggable> */}
+        </div>
+      </div>
+
+
     </>
   );
 }
