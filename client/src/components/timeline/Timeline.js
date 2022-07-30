@@ -20,7 +20,7 @@ function timeline() {
         bpm: 120,
         activateKeys: true,
         antialias: true,
-        zoom: 8,
+        zoom: 4,
         resolution: 4,
         tickAmount: 9,
         time: 0,
@@ -47,7 +47,7 @@ function timeline() {
     renderer.resize(opt.width, opt.height);
 
     function createRhythmMark(time) {
-        console.log("Adding at " + time);
+        time = time * opt.zoom;
 
         let offset = getFirstVerticalGridLineX(
             noteContainer ? noteContainer.x : transportTimeToX(opt.time)
@@ -137,7 +137,7 @@ function timeline() {
                 line.y = 60;
 
                 if (i % 10 === 0) {
-                    let text = new pixi.Text("00:00:" + i, {
+                    let text = new pixi.Text("00:00:" + (i / opt.zoom), {
                         fontFamily: "Inter",
                         fontSize: 16,
                         fill: 0x6d6d6d,
@@ -176,7 +176,7 @@ function timeline() {
     }
 
     function calculate() {
-        barWidth = (opt.width - opt.pianoKeyWidth) / opt.zoom;
+        barWidth = (opt.width - opt.pianoKeyWidth) / 8;
         gridLineWidth = barWidth / 100;
         gridLineSpacing = barWidth / opt.resolution;
     }
