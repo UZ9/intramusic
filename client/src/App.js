@@ -8,6 +8,8 @@ import PianoRollModule from "./components/PianoRollModule";
 import TimelineComponent from "./components/timeline/TimelineComponent";
 import PianoRoll from "./components/PianoRoll";
 import { useRef } from "react";
+import ReactPlayer from "react-player/file";
+import { useEffect } from "react";
 
 function Navbar() {
     return (
@@ -47,6 +49,11 @@ function Navbar() {
 
 function App() {
     const timeline = useRef(null);
+    const reactPlayer = useRef(null);
+
+    useEffect(() => {
+        console.log(reactPlayer.current);
+    })
 
     return (
         <>
@@ -68,7 +75,16 @@ function App() {
                 <div className="row ms-md-1 mr-md-1 pt-3">
                     <Draggable grid={[40, 40]}>
                         <div className="p-3 card card-common">
-                            <ReactPlayerWrapper />
+                            <ReactPlayer
+                                url="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+                                volume={0.8}
+                                width={384}
+                                height={216}
+                                muted={true}
+                                playing={true}
+                                controls={true}
+                                ref={reactPlayer}
+                            />
                         </div>
                     </Draggable>
                 </div>
@@ -92,6 +108,7 @@ function App() {
                     <div className="p-3 card card-common">
                         <TimelineComponent
                             ref={timeline}
+                            player={reactPlayer}
                             width={1800}
                             height={200}
                         />
@@ -99,6 +116,8 @@ function App() {
                     {/* </Draggable> */}
                 </div>
             </div>
+
+            <div className="vh-100">d</div>
         </>
     );
 }

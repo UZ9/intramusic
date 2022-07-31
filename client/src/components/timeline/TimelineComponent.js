@@ -4,13 +4,21 @@ import timeline from "./Timeline";
 const TimelineComponent = (props, playbackRef) => {
   const container = useRef();
 
-  const pianoRoll = timeline(props);
+  console.log("Rerendering timeline");
+  console.log(props.player);
 
+  let pianoRoll = useRef();
 
-  useImperativeHandle(playbackRef, () => pianoRoll.playback)
+  useImperativeHandle(playbackRef, () => pianoRoll)
 
   useEffect(() => {
-    container.current.appendChild(pianoRoll.view);
+
+    if (props.player.current !== null) {
+      pianoRoll.current = timeline(props.player.current);
+
+      container.current.appendChild(pianoRoll.current.view);
+    }
+    
   });
 
   return <div ref={container} />;

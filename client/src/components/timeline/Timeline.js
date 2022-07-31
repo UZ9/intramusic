@@ -1,7 +1,7 @@
 import musicalScaleColors from "musical-scale-colors";
 import * as pixi from "pixi.js";
 
-function timeline() {
+function timeline(player) {
     const colors = {
         blackKey: 0x000000,
         whiteKey: 0xffffff,
@@ -107,6 +107,8 @@ function timeline() {
     }
 
     function drawGridlines(type) {
+
+        console.log("Drawing grid line");
         let i;
 
         if (!type || type === "vertical") {
@@ -166,7 +168,6 @@ function timeline() {
             lastTime = frameTime;
         }
 
-        console.log("Render");
 
         lastTime = frameTime;
 
@@ -188,8 +189,8 @@ function timeline() {
         renderer.backgroundColor = opt.blackGridBgColor;
         renderer.render(stage);
 
-        playing = true;
-        requestAnimationFrame(updateLoop);
+        // playing = true;
+        // requestAnimationFrame(updateLoop);
     })();
 
     let pianoRollAPI = {

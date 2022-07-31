@@ -9,7 +9,7 @@ export function ReactPlayerWrapper(props) {
                 height={216}
                 muted={true}
                 playing={true}
-                controls={false} />
+                controls={true} />
         </>
     )
 }

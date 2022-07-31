@@ -24,10 +24,8 @@ export default function RhythmMaker({ timeline }) {
     };
 
     const markTheBeat = () => {
-        console.log("pushing " + clock.current);
 
-
-        timeline.current.addRhythmMark(clock.current / 100.0)
+        timeline.current.current.playback.addRhythmMark(clock.current / 100.0)
 
         timeInterval.current.push(clock.current);
     };
