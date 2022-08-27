@@ -22,11 +22,14 @@ export default function Editor({ Component, pageProps }) {
             <Navbar />
 
             <div className="flex flex-grow items-stretch">
+
                 <div className="w-[6.5rem] border-r border-t border-stroke-secondary bg-background-secondary"></div>
 
                 <div className="flex w-[22rem] border-r border-t border-stroke-secondary bg-sidebar-background">
                     <div className="flex flex-grow flex-col h-16 border-b border-stroke-secondary justify-center">
-                        <div className="text-center text-[1.35em] mt-2 font-title font-bold text-title-secondary">Rhythm</div>
+                        <div className="text-center text-[1.35em] mt-2 font-title font-bold text-title-secondary">
+                            Rhythm
+                        </div>
                     </div>
                 </div>
 
