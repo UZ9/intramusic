@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import { ReactElement } from "react";
+import { Add, Checkmark, Close, Touch_1Filled } from "@carbon/icons-react";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navigation/navbar.component";
 
@@ -22,13 +23,72 @@ export default function Editor({ Component, pageProps }) {
             <Navbar />
 
             <div className="flex flex-grow items-stretch">
-
                 <div className="w-[6.5rem] border-r border-t border-stroke-secondary bg-background-secondary"></div>
 
-                <div className="flex w-[22rem] border-r border-t border-stroke-secondary bg-sidebar-background">
-                    <div className="flex flex-grow flex-col h-16 border-b border-stroke-secondary justify-center">
+                <div className="flex-col w-[22rem] border-r border-t border-stroke-secondary bg-sidebar-background">
+                    <div className="flex flex-grow flex-col h-16 border-b mb-8 border-stroke-secondary justify-center">
                         <div className="text-center text-[1.35em] mt-2 font-title font-bold text-title-secondary">
                             Rhythm
+                        </div>
+                    </div>
+
+                    <div className="bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
+                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
+                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
+                            <div className="flex justify-between">
+                                <div className="py-1 px-3 font-special border-r border-stroke-secondary">
+                                    <Touch_1Filled
+                                        size={20}
+                                        color={"#FF7878"}
+                                    />
+                                </div>
+
+                                <div className="flex-grow flex justify-between">
+                                    <div className="py-1 pl-3 font-special">
+                                        499
+                                    </div>
+                                    <div className="py-1 pr-3 text-[#abababab] ">
+                                        BPM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-3 bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
+                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
+                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
+                            <div className="flex justify-between">
+                                <div className="flex-grow flex justify-between">
+                                    <div className="py-1 pl-3 font-special">
+                                        499
+                                    </div>
+                                    <div className="py-1 pr-3 text-[#abababab] ">
+                                        BPM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-3 bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
+                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
+                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
+                            <div className="flex justify-between">
+                                <div className="flex justify-center flex-grow py-1 px-3 font-special border-r border-stroke-secondary">
+                                    <Checkmark
+                                        size={20}
+                                        color={"#FF7878"}
+                                    />
+                                </div>
+
+                                <div className="flex justify-center flex-grow py-1 px-3 font-special border-r border-stroke-secondary">
+                                    <Close
+                                        size={20}
+                                        color={"#C3BFBF"}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +98,21 @@ export default function Editor({ Component, pageProps }) {
 
             <div className="flex flex-col h-64 bg-red-300">
                 <div className="flex h-16 border-y border-stroke-secondary bg-background-secondary"></div>
-                <div className="flex flex-grow border-stroke-secondary bg-background-secondary"></div>
+                <div className="flex flex-grow border-stroke-secondary bg-background-secondary">
+                    <div className="flex-col w-[10rem] border-r border-stroke-secondary">
+                        <div className="text-gray-500 px-5 pb-11 text-xl border-b border-stroke-secondary"></div>
+                        <div className="text-gray-500 px-5 py-2 font-special text-lg border-b border-stroke-secondary">
+                            Audio
+                        </div>
+
+                        <div className="text-gray-500 px-5 py-2 font-special text-lg text-title-secondary border-b border-stroke-secondary">
+                            Rhythm
+                        </div>
+                        {/* <div className="text-xl text-title-secondary border-b">
+                            
+                        </div> */}
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -19,6 +19,9 @@ module.exports = {
         "red-highlight": "#D35050",
         "title-secondary": "#C3BFBF"
       },
+      boxShadow: {
+        'button': '0 4px 4px 0px rgba(0, 0, 0, .39)'
+      }
 
     },
 
