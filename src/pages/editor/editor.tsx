@@ -16,6 +16,7 @@ import MenuGroup from "../../components/editor/menu/menugroup.component";
 import MenuButton from "../../components/editor/menu/menubutton.component";
 import MenuInput from "../../components/editor/menu/menuinput.component";
 import MenuToggle from "../../components/editor/menu/menutoggle.component";
+import SideMenu from "../../components/editor/modules/sidemenu.component";
 
 export default function Editor({ Component, pageProps }) {
     return (
@@ -37,33 +38,7 @@ export default function Editor({ Component, pageProps }) {
             <div className="flex flex-grow items-stretch">
                 <div className="w-[6.5rem] border-r border-t border-stroke-secondary bg-background-secondary"></div>
 
-                <div className="flex-col w-[22rem] border-r border-t border-stroke-secondary bg-sidebar-background">
-                    <div className="flex flex-grow flex-col h-16 border-b mb-8 border-stroke-secondary justify-center">
-                        <div className="text-center text-[1.35em] mt-2 font-title font-bold text-title-secondary">
-                            Rhythm
-                        </div>
-                    </div>
-
-                    <MenuCategory title="Tempo">
-                        <MenuGroup label="Beats per Minute">
-                            <MenuButton icon={<Touch_1Filled size={20} color={"#FF7878"} />}/>
-                            <MenuInput placeholder="100" label="BPM"/>
-                        </MenuGroup>
-
-                        <MenuGroup label="Beats per Minute">
-                            <MenuButton icon={<Touch_1Filled size={20} color={"#FF7878"} />}/>
-                            <MenuInput placeholder="100" label="BPM"/>
-                        </MenuGroup>
-
-                        <MenuGroup label="Some Option">
-                            <MenuInput placeholder="100" label="BPM"/>
-                        </MenuGroup>
-
-                        <MenuGroup label="Some Option">
-                            <MenuToggle/>
-                        </MenuGroup>
-                    </MenuCategory>
-                </div>
+                <SideMenu/>
 
                 <div className="flex-grow border-t border-stroke-secondary bg-background-primary"></div>
             </div>

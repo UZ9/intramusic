@@ -13,7 +13,7 @@ export default function MenuGroup({ children, label }: MenuGroupProps) {
             text-title-secondary"
             >
                 <div className="flex-1 mr-3 ">{label}</div>
-                <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
+                <div className="ml-4 flex-1 shadow-button border-stroke-secondary border rounded-sm">
                     <div className="flex justify-between h-7">
                         
                         {children}
