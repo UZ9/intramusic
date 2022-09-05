@@ -14,17 +14,10 @@ export default function SideMenu() {
                 </div>
             </div>
 
-            <MenuCategory title="Tempo">
-                <MenuGroup label="Beats per Minute">
+            <MenuCategory title="General">
+                <MenuGroup label="Tempo">
                     <MenuButton
-                        icon={<Touch_1Filled size={20} color={"#FF7878"} />}
-                    />
-                    <MenuInput placeholder="100" label="BPM" />
-                </MenuGroup>
-
-                <MenuGroup label="Beats per Minute">
-                    <MenuButton
-                        icon={<Touch_1Filled size={20} color={"#FF7878"} />}
+                        icon={<Touch_1Filled size={20} />}
                     />
                     <MenuInput placeholder="100" label="BPM" />
                 </MenuGroup>
@@ -33,7 +26,7 @@ export default function SideMenu() {
                     <MenuInput placeholder="100" label="BPM" />
                 </MenuGroup>
 
-                <MenuGroup label="Some Option">
+                <MenuGroup label="Some Toggle">
                     <MenuToggle />
                 </MenuGroup>
             </MenuCategory>
