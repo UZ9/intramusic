@@ -1,9 +1,21 @@
 import Head from "next/head";
 
 import { ReactElement } from "react";
-import { Add, Checkmark, Close, Touch_1Filled } from "@carbon/icons-react";
+import {
+    Add,
+    Checkmark,
+    Close,
+    Music,
+    Touch_1Filled,
+} from "@carbon/icons-react";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navigation/navbar.component";
+import MenuItem from "../../components/editor/menu/menuitem.component";
+import MenuCategory from "../../components/editor/menu/menucategory.component";
+import MenuGroup from "../../components/editor/menu/menugroup.component";
+import MenuButton from "../../components/editor/menu/menubutton.component";
+import MenuInput from "../../components/editor/menu/menuinput.component";
+import MenuToggle from "../../components/editor/menu/menutoggle.component";
 
 export default function Editor({ Component, pageProps }) {
     return (
@@ -32,65 +44,25 @@ export default function Editor({ Component, pageProps }) {
                         </div>
                     </div>
 
-                    <div className="bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
-                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
-                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
-                            <div className="flex justify-between">
-                                <div className="py-1 px-3 font-special border-r border-stroke-secondary">
-                                    <Touch_1Filled
-                                        size={20}
-                                        color={"#FF7878"}
-                                    />
-                                </div>
+                    <MenuCategory title="Tempo">
+                        <MenuGroup label="Beats per Minute">
+                            <MenuButton icon={<Touch_1Filled size={20} color={"#FF7878"} />}/>
+                            <MenuInput placeholder="100" label="BPM"/>
+                        </MenuGroup>
 
-                                <div className="flex-grow flex justify-between">
-                                    <div className="py-1 pl-3 font-special">
-                                        499
-                                    </div>
-                                    <div className="py-1 pr-3 text-[#abababab] ">
-                                        BPM
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <MenuGroup label="Beats per Minute">
+                            <MenuButton icon={<Touch_1Filled size={20} color={"#FF7878"} />}/>
+                            <MenuInput placeholder="100" label="BPM"/>
+                        </MenuGroup>
 
-                    <div className="mt-3 bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
-                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
-                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
-                            <div className="flex justify-between">
-                                <div className="flex-grow flex justify-between">
-                                    <div className="py-1 pl-3 font-special">
-                                        499
-                                    </div>
-                                    <div className="py-1 pr-3 text-[#abababab] ">
-                                        BPM
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <MenuGroup label="Some Option">
+                            <MenuInput placeholder="100" label="BPM"/>
+                        </MenuGroup>
 
-                    <div className="mt-3 bg-wh text-sm flex items-center justify-between container px-5 font-special text-title-secondary">
-                        <div className="flex-1 mr-3 ">Beats Per Minute</div>
-                        <div className="flex-1 shadow-button border-stroke-secondary border rounded-sm">
-                            <div className="flex justify-between">
-                                <div className="flex justify-center flex-grow py-1 px-3 font-special border-r border-stroke-secondary">
-                                    <Checkmark
-                                        size={20}
-                                        color={"#FF7878"}
-                                    />
-                                </div>
-
-                                <div className="flex justify-center flex-grow py-1 px-3 font-special border-r border-stroke-secondary">
-                                    <Close
-                                        size={20}
-                                        color={"#C3BFBF"}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <MenuGroup label="Some Option">
+                            <MenuToggle/>
+                        </MenuGroup>
+                    </MenuCategory>
                 </div>
 
                 <div className="flex-grow border-t border-stroke-secondary bg-background-primary"></div>

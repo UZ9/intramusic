@@ -10,7 +10,7 @@ export default function Navbar() {
                 <div className="grid flex-1 md:order-2 justify-items-end">
                     <button
                         type="button"
-                        className="text-white font-special text-[#cdcdcd] px-4 rounded-md border-2 border-red-highlight p-2 hover:text-white text-left hover:bg-red-highlight"
+                        className="text-whit text-sm mx-16 font-special text-[#cdcdcd] px-4 rounded-md border-2 border-red-highlight p-2 hover:text-white text-left hover:bg-red-highlight"
                     >
                         Export to Musescore
                     </button>
