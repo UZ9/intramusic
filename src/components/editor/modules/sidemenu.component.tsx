@@ -1,4 +1,5 @@
 import { Touch_1Filled } from "@carbon/icons-react";
+import BPMFinder from "../../bpm/BPMFinder";
 import MenuButton from "../menu/menubutton.component";
 import MenuCategory from "../menu/menucategory.component";
 import MenuGroup from "../menu/menugroup.component";
@@ -28,6 +29,10 @@ export default function SideMenu() {
 
                 <MenuGroup label="Some Toggle">
                     <MenuToggle />
+                </MenuGroup>
+
+                <MenuGroup label="Test">
+                    <BPMFinder/>
                 </MenuGroup>
             </MenuCategory>
         </div>
