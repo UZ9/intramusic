@@ -1,3 +1,5 @@
+import MIDIExporter from "../exporter/midiexporter.component";
+
 export default function Navbar() {
     return (
         <nav className="flex-col px-2 sm:px-4 h-16 pt-1 dark:bg-background-secondary w-full z-20 top-0 left-0">
@@ -8,12 +10,7 @@ export default function Navbar() {
                 >
                 </a>
                 <div className="grid flex-1 md:order-2 justify-items-end">
-                    <button
-                        type="button"
-                        className="text-whit text-sm mx-16 font-special text-[#cdcdcd] px-4 rounded-md border-2 border-red-highlight p-2 hover:text-white text-left hover:bg-red-highlight"
-                    >
-                        Export to Musescore
-                    </button>
+                    <MIDIExporter/>
                     <button
                         data-collapse-toggle="navbar-sticky"
                         type="button"

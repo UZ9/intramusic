@@ -17,6 +17,9 @@ import MenuButton from "../../components/editor/menu/menubutton.component";
 import MenuInput from "../../components/editor/menu/menuinput.component";
 import MenuToggle from "../../components/editor/menu/menutoggle.component";
 import SideMenu from "../../components/editor/modules/sidemenu.component";
+import ReactPlayerWrapper from "../../modules/video/ReactPlayerWrapper";
+import ReactPlayer from "react-player";
+import RhythmMaker from "../../components/rhythm/RhythmMaker";
 
 export default function Editor({ Component, pageProps }) {
     return (
@@ -38,9 +41,23 @@ export default function Editor({ Component, pageProps }) {
             <div className="flex flex-grow items-stretch">
                 <div className="w-[6.5rem] border-r border-t border-stroke-secondary bg-background-secondary"></div>
 
-                <SideMenu/>
+                <SideMenu />
 
-                <div className="flex-grow border-t border-stroke-secondary bg-background-primary"></div>
+                <div className="flex-grow justify-between flex flex-col border-t border-stroke-secondary bg-background-primary">
+                    <ReactPlayer
+                        url="https://youtu.be/-jurWjh1Kag"
+                        volume={0.8}
+                        width={384}
+                        height={216}
+                        muted={true}
+                        playing={true}
+                        controls={false}
+                    />
+
+                    <RhythmMaker/>
+
+                    <div className="h-20 border-t border-stroke-secondary">d</div>
+                </div>
             </div>
 
             <div className="flex flex-col h-64 bg-red-300">
@@ -48,11 +65,11 @@ export default function Editor({ Component, pageProps }) {
                 <div className="flex flex-grow border-stroke-secondary bg-background-secondary">
                     <div className="flex-col w-[10rem] border-r border-stroke-secondary">
                         <div className="text-gray-500 px-5 pb-11 text-xl border-b border-stroke-secondary"></div>
-                        <div className="text-gray-500 px-5 py-2 font-special text-lg border-b border-stroke-secondary">
+                        <div className="text-gray-500 px-5 py-2 font-special text-title-secondary text-md border-b border-stroke-secondary">
                             Audio
                         </div>
 
-                        <div className="text-gray-500 px-5 py-2 font-special text-lg text-title-secondary border-b border-stroke-secondary">
+                        <div className="text-gray-500 px-5 py-2 font-special text-md text-title-secondary border-b border-stroke-secondary">
                             Rhythm
                         </div>
                         {/* <div className="text-xl text-title-secondary border-b">

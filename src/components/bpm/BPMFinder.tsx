@@ -2,11 +2,14 @@ import { Touch_1Filled } from "@carbon/icons-react";
 import React, { useRef, useState } from "react";
 import MenuButton from "../editor/menu/menubutton.component";
 import MenuInput from "../editor/menu/menuinput.component";
+import useStore from "../../stores/MusicDataStore";
 
 export default function BPMFinder() {
     const [clockRunning, setClockRunning] = useState(false);
     const [clicksLeft, setClicksLeft] = useState(0);
     const [bpmDisplay, setBpmDisplay] = useState(0);
+
+    const setBpm = useStore((state) => state.setTempo);
 
     const clicks = 8;
 
@@ -23,6 +26,7 @@ export default function BPMFinder() {
     };
 
     const markTheBeat = () => {
+        console.log("pushing " + clock.current);
         timeInterval.current.push(clock.current);
     };
 
@@ -41,6 +45,7 @@ export default function BPMFinder() {
 
         reset();
         setBpmDisplay(bpm);
+        setBpm(bpm);
     };
 
     const reset = () => {
@@ -72,9 +77,11 @@ export default function BPMFinder() {
 
     return (
         <>
-            <MenuButton onClick={handleClick} icon={<Touch_1Filled size={20} />} />
-            <MenuInput label="BPM" placeholder={bpmDisplay + ""}/>
-            {/* <span>{bpmDisplay}</span> */}
+            <MenuButton
+                onClick={handleClick}
+                icon={<Touch_1Filled size={20} />}
+            />
+            <MenuInput label="BPM" placeholder={bpmDisplay + ""} />
         </>
     );
 }

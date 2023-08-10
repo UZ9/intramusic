@@ -34,6 +34,7 @@ export default function SideMenu() {
                 <MenuGroup label="Test">
                     <BPMFinder/>
                 </MenuGroup>
+
             </MenuCategory>
         </div>
     );
